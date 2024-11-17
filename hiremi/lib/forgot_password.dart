@@ -13,8 +13,8 @@ class ForgotPass extends StatefulWidget {
 class _ForgotPassState extends State<ForgotPass> {
   bool _obscureText = true;
   bool _obscureTextConfirm = true;
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
   String? _passwordMessage = 'Min 8 characters, 1 upper case, 1 digit, 1 special character';
   bool _isPasswordInvalid = false;
   bool _isConfirmPasswordInvalid = false;
@@ -108,7 +108,7 @@ class _ForgotPassState extends State<ForgotPass> {
                           fontSize: 15,
                           color: Colors.black,
                         ),
-                        children: [
+                        children: const [
                           TextSpan(
                             text: 'New Password',
                           ),
@@ -206,7 +206,7 @@ class _ForgotPassState extends State<ForgotPass> {
                           fontSize: 15,
                           color: Colors.black,
                         ),
-                        children: [
+                        children: const [
                           TextSpan(
                             text: 'Confirm New Password',
                           ),
@@ -299,7 +299,7 @@ class _ForgotPassState extends State<ForgotPass> {
                 // Single container for all messages
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
+                  child: SizedBox(
                     width: MediaQuery.of(context).size.width - 40,
                     child: Text(
                       _passwordMessage ?? 'Min 8 characters, 1 upper case, 1 digit, 1 special character',
@@ -321,7 +321,7 @@ class _ForgotPassState extends State<ForgotPass> {
                         _validatePassword(); // Validate password when button is pressed
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFC1272D),
+                        backgroundColor: const Color(0xFFC1272D),
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
