@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hiremi/forgot_password.dart';
+import 'screens/forgot_pass.dart';
 void main() {
   runApp(const MyApp());
 }
