@@ -1,8 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../wigdets/background.dart';
 import '../wigdets/password_field.dart';
 import '../wigdets/reset_button.dart';
+import 'package:hiremi/colors.dart';
 
 class ForgotPass extends StatefulWidget {
   const ForgotPass({super.key});
@@ -22,10 +24,10 @@ class _ForgotPassState extends State<ForgotPass> {
 
   // Regular expression to validate password strength
   bool _isPasswordValidFunction(String password) {
-    final RegExp _passwordRegExp = RegExp(
+    final RegExp passwordRegExp = RegExp(
       r'^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$',
     );
-    return _passwordRegExp.hasMatch(password);
+    return passwordRegExp.hasMatch(password);
   }
 
   // Validation logic for both password fields
@@ -63,17 +65,6 @@ class _ForgotPassState extends State<ForgotPass> {
     _validateFields();
   }
 
-  // Logic to handle password reset
-  void _resetPassword() {
-    if (_areBothPasswordsValid && !_isBothEmpty) {
-      print('Password reset successful');
-    } else {
-      setState(() {
-        _errorMessage = _errorMessage ?? "Please correct the errors above.";
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,7 +78,7 @@ class _ForgotPassState extends State<ForgotPass> {
                 Padding(
                   padding: const EdgeInsets.only(top: 32.0),
                   child: Image.asset(
-                    'assets/images/main (1).png',
+                    'assets/images/logo.png',
                     width: MediaQuery.of(context).size.width * 0.6,
                   ),
                 ),
@@ -101,7 +92,7 @@ class _ForgotPassState extends State<ForgotPass> {
                 Padding(
                   padding: const EdgeInsets.only(top: 25.0),
                   child: Image.asset(
-                    'assets/images/Reset password-bro.png',
+                    'assets/images/forgot password.png',
                     width: 323,
                     height: 323,
                   ),
@@ -120,7 +111,7 @@ class _ForgotPassState extends State<ForgotPass> {
                           TextSpan(text: 'New Password'),
                           TextSpan(
                             text: ' *',
-                            style: TextStyle(color: Colors.red),
+                            style: TextStyle(color: AppColors.textField),
                           ),
                         ],
                       ),
@@ -132,9 +123,6 @@ class _ForgotPassState extends State<ForgotPass> {
                   obscureText: true,
                   hintText: '********',
                   onChanged: _onPasswordChange,
-                  isPasswordMismatch: _isPasswordMismatch,
-                  areBothPasswordsValid: _areBothPasswordsValid,
-                  isBothEmpty: _isBothEmpty,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0, left: 20),
@@ -150,7 +138,7 @@ class _ForgotPassState extends State<ForgotPass> {
                           TextSpan(text: 'Confirm New Password'),
                           TextSpan(
                             text: ' *',
-                            style: TextStyle(color: Colors.red),
+                            style: TextStyle(color: AppColors.textField),
                           ),
                         ],
                       ),
@@ -162,26 +150,23 @@ class _ForgotPassState extends State<ForgotPass> {
                   obscureText: true,
                   hintText: '********',
                   onChanged: _onPasswordChange,
-                  isPasswordMismatch: _isPasswordMismatch,
-                  areBothPasswordsValid: _areBothPasswordsValid,
-                  isBothEmpty: _isBothEmpty,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width - 40,
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width - 30,
                     child: Text(
-                      _errorMessage ?? 'Password must be at least 8 characters, include 1 uppercase, 1 digit, and 1 special character.',
+                      _errorMessage ?? 'Min 8 characters, 1 upper case, 1 digit, 1 special character',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w400,
                         fontSize: 12,
-                        color: _errorMessage != null ? Colors.red : Colors.black,
+                        color: _errorMessage != null ? AppColors.errorMsg :  Colors.black,
                       ),
                     ),
                   ),
                 ),
-                ResetButton(onPressed: _resetPassword),
+                ResetButton(onPressed: (){}),
               ],
             ),
           ),

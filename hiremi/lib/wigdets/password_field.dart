@@ -1,25 +1,21 @@
+
 import 'package:flutter/material.dart';
 import 'package:hiremi/colors.dart';
+
 
 class PasswordField extends StatefulWidget {
   final TextEditingController controller;
   final bool obscureText;
   final String hintText;
   final ValueChanged<String> onChanged;
-  final bool isPasswordMismatch;
-  final bool areBothPasswordsValid; // Flag to indicate both passwords are valid
-  final bool isBothEmpty; // Flag to check if both fields are empty
 
   const PasswordField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.obscureText,
     required this.hintText,
     required this.onChanged,
-    this.isPasswordMismatch = false,
-    this.areBothPasswordsValid = false,
-    this.isBothEmpty = false,
-  }) : super(key: key);
+  });
 
   @override
   _PasswordFieldState createState() => _PasswordFieldState();
@@ -36,17 +32,9 @@ class _PasswordFieldState extends State<PasswordField> {
 
   @override
   Widget build(BuildContext context) {
-    // Determine the border and icon colors based on the current state
-    Color borderColor = AppColors.grey; // Default color for empty fields
-    if (widget.isPasswordMismatch) {
-      borderColor = AppColors.red; // Mismatch state
-    } else if (widget.areBothPasswordsValid) {
-      borderColor = AppColors.green; // Valid and matching passwords
-    }
-
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
+      child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.9,
         child: TextField(
           controller: widget.controller,
@@ -54,28 +42,28 @@ class _PasswordFieldState extends State<PasswordField> {
           onChanged: widget.onChanged,
           decoration: InputDecoration(
             hintText: widget.hintText,
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: borderColor), // Dynamic border color
+            enabledBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: AppColors.textField),
             ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: borderColor), // Dynamic border on focus
+            focusedBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: AppColors.textField),
             ),
             prefixIcon: Padding(
               padding: const EdgeInsets.only(right: 10),
               child: Container(
                 width: 60,
-                decoration: BoxDecoration(
-                  border: Border(right: BorderSide(color: borderColor)),
+                decoration: const BoxDecoration(
+                  border: Border(right: BorderSide(color: AppColors.textField)), // Static grey border
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.lock,
-                  color: borderColor, // Dynamic lock icon color
+                  color: AppColors.lockIcon,
                 ),
               ),
             ),
             suffixIcon: IconButton(
               icon: Icon(
-                _obscureText ? Icons.visibility_off : Icons.visibility,
+                _obscureText ? Icons.visibility_off_outlined : Icons.visibility_outlined,
                 color: Colors.grey,
               ),
               onPressed: () {
@@ -90,3 +78,4 @@ class _PasswordFieldState extends State<PasswordField> {
     );
   }
 }
+
