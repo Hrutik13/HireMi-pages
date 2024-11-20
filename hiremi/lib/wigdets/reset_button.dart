@@ -10,14 +10,17 @@ class ResetButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+      padding: EdgeInsets.symmetric(
+        horizontal: MediaQuery.of(context).size.width * 0.05,  // 5% of screen width
+        vertical: MediaQuery.of(context).size.height * 0.03,    // 5% of screen height
+      ),
       child: SizedBox(
         width: double.infinity,
         child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor:  AppColors.resetBtn,
-            padding: const EdgeInsets.symmetric(vertical: 16),
+            padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.02),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(4),
             ),
@@ -25,7 +28,7 @@ class ResetButton extends StatelessWidget {
           child: Text(
             "Reset Password",
             style: GoogleFonts.poppins(
-              fontSize: 16,
+              fontSize: MediaQuery.of(context).size.width * 0.04,
               fontWeight: FontWeight.w400,
               color: Colors.white,
             )

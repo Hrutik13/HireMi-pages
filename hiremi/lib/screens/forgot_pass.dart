@@ -76,7 +76,7 @@ class _ForgotPassState extends State<ForgotPass> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 32.0),
+                  padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03,),
                   child: Image.asset(
                     'assets/images/logo.png',
                     width: MediaQuery.of(context).size.width * 0.6,
@@ -86,25 +86,30 @@ class _ForgotPassState extends State<ForgotPass> {
                   'Create new Password,',
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,
-                    fontSize: 22,
+                    fontSize: MediaQuery.of(context).size.width * 0.06,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 25.0),
+                  padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
                   child: Image.asset(
                     'assets/images/forgot password.png',
-                    width: 323,
-                    height: 323,
-                  ),
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: MediaQuery.of(context).size.width * 0.8,
+                  )
                 ),
+
                 Padding(
-                  padding: const EdgeInsets.only(top: 20.0, left: 20),
+                  padding:  EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.03, // 3% of screen height
+                    left: MediaQuery.of(context).size.width * 0.05, // 5% of screen width
+                  ),
+
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: RichText(
                       text: TextSpan(
                         style: GoogleFonts.poppins(
-                          fontSize: 15,
+                          fontSize: MediaQuery.of(context).size.width * 0.04,
                           color: Colors.black,
                         ),
                         children: const [
@@ -125,13 +130,16 @@ class _ForgotPassState extends State<ForgotPass> {
                   onChanged: _onPasswordChange,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20.0, left: 20),
+                  padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.02, // 3% of screen height
+                    left: MediaQuery.of(context).size.width * 0.05, // 5% of screen width
+                  ),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: RichText(
                       text: TextSpan(
                         style: GoogleFonts.poppins(
-                          fontSize: 15,
+                          fontSize: MediaQuery.of(context).size.width * 0.04,
                           color: Colors.black,
                         ),
                         children: const [
@@ -152,7 +160,7 @@ class _ForgotPassState extends State<ForgotPass> {
                   onChanged: _onPasswordChange,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width - 30,
                     child: Text(
@@ -160,7 +168,7 @@ class _ForgotPassState extends State<ForgotPass> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w400,
-                        fontSize: 12,
+                        fontSize: MediaQuery.of(context).size.width * 0.03,
                         color: _errorMessage != null ? AppColors.errorMsg :  Colors.black,
                       ),
                     ),

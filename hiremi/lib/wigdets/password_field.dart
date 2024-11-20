@@ -33,7 +33,7 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.9,
         child: TextField(
@@ -49,9 +49,9 @@ class _PasswordFieldState extends State<PasswordField> {
               borderSide: BorderSide(color: AppColors.textField),
             ),
             prefixIcon: Padding(
-              padding: const EdgeInsets.only(right: 10),
+              padding:  EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.02),
               child: Container(
-                width: 60,
+                width: MediaQuery.of(context).size.width * 0.15,
                 decoration: const BoxDecoration(
                   border: Border(right: BorderSide(color: AppColors.textField)), // Static grey border
                 ),
