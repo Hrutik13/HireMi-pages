@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/bottom_navbar.dart';
 import '../widgets/app_drawer.dart';
+import '../widgets/app_bar.dart';
 
 class HelpAndSupport extends StatelessWidget {
   const HelpAndSupport({super.key});
@@ -9,39 +10,9 @@ class HelpAndSupport extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Align(
-          alignment: Alignment.center,
-          child: Text(
-            'Help & Support',
-            style: GoogleFonts.poppins(
-              fontSize: MediaQuery.of(context).size.width * 0.04,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01),
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.05,
-              width: MediaQuery.of(context).size.height * 0.05,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.notifications_none_outlined,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+      appBar: customAppBar(context, "Help & Support"),
       drawer: const AppDrawer(),
+
       body: Center(
         // Center the entire content
         child: Column(
