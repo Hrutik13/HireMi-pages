@@ -1,13 +1,13 @@
-import 'dart:ui'; // Required for BackdropFilter
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-/// Function to show a custom popup dialog
+
 void showCustomPopup(BuildContext context) {
   showDialog(
     context: context,
-    barrierDismissible: false, // Prevent dismissing by tapping outside
-    barrierColor: Colors.black.withOpacity(0.5), // Dimmed background
+    barrierDismissible: false,
+    barrierColor: Colors.black.withOpacity(0.5),
     builder: (BuildContext context) {
       return BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5), // Blur effect
@@ -21,7 +21,6 @@ void showCustomPopup(BuildContext context) {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Header Row with Title and Close Button
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

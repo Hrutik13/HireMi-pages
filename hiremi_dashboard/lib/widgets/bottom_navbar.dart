@@ -13,7 +13,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
 
   // List of pages for navigation
   final List<Widget> _pages = [
-    const HomeScreen(),         // Page for Home
+    const HomeScreen(),
                ];
 
   void _onItemTapped(int index) {
@@ -23,7 +23,8 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => _pages[index],
+       // builder: (context) => _pages[index],
+        builder: (context) => HomeScreen(),
       ),
     );
   }

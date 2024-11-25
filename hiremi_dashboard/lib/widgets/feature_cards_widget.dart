@@ -144,7 +144,7 @@ class FeatureCardsWidget extends StatelessWidget {
                   imagePath,
                   height: 50,
                   width: 50,
-                  fit: BoxFit.cover, // Ensure the image fits nicely
+                  fit: BoxFit.cover,
                 ),
               ),
             ],
