@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import '../screens/help_and_support.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 
 AppBar customAppBar(BuildContext context, String title)
  {
@@ -25,7 +27,7 @@ AppBar customAppBar(BuildContext context, String title)
             color: Colors.white,
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context) => HelpAndSupport(),)),
             icon: const Icon(
               Icons.notifications_none_outlined,
               color: Colors.black,

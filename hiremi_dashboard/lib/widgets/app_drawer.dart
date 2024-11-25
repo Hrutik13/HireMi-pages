@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hiremi_dashboard/colors.dart';
 import '../screens/about_app.dart';
 import '../widgets/logout.dart';
+import '../screens/contact_us.dart';
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({super.key});
@@ -233,7 +234,7 @@ class _AppDrawerState extends State<AppDrawer> {
                   index: 3,
                   icon: Icons.help,
                   title: 'Help and Support',
-                  onTap: () {}
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) =>  ContactUs(),)),
                 ),
               ],
             ),
