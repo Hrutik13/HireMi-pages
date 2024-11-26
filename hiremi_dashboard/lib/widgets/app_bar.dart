@@ -27,7 +27,7 @@ AppBar customAppBar(BuildContext context, String title)
             color: Colors.white,
           ),
           child: IconButton(
-            onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context) => HelpAndSupport(),)),
+            onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context) => const HelpAndSupport(),)),
             icon: const Icon(
               Icons.notifications_none_outlined,
               color: Colors.black,

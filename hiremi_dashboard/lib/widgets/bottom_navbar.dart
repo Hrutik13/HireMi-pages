@@ -24,7 +24,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
       context,
       MaterialPageRoute(
        // builder: (context) => _pages[index],
-        builder: (context) => HomeScreen(),
+        builder: (context) => const HomeScreen(),
       ),
     );
   }

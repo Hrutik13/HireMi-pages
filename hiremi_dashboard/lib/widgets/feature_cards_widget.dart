@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hiremi_dashboard/widgets/popup_msg.dart';
 
 class FeatureCardsWidget extends StatelessWidget {
   const FeatureCardsWidget({super.key});
@@ -82,72 +83,75 @@ class FeatureCardsWidget extends StatelessWidget {
   }
 
   Widget _buildFeatureCard(String title, String description,
-      List<Color> gradientColors, String imagePath, Color borderColor) {
+      List<Color> gradientColors, String imagePath, Color borderColor, ) {
     return Builder(
       builder: (context) {
         // MediaQuery is accessed inside the builder to ensure context is valid
-        return Container(
-          padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.04),
-          decoration: BoxDecoration(
-            border: Border.all(color: borderColor),
-            gradient: LinearGradient(
-              colors: [
-                gradientColors[0],
-                Colors.white.withOpacity(0.7),
-                // Add a white shade with transparency
-                gradientColors[1],
-              ],
-              stops: const [0.0, 0.7, 1.0],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+        return GestureDetector(
+          onTap: () => showCustomPopup(context),
+          child: Container(
+            padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.04),
+            decoration: BoxDecoration(
+              border: Border.all(color: borderColor),
+              gradient: LinearGradient(
+                colors: [
+                  gradientColors[0],
+                  Colors.white.withOpacity(0.7),
+                  // Add a white shade with transparency
+                  gradientColors[1],
+                ],
+                stops: const [0.0, 0.7, 1.0],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(12.0),
             ),
-            borderRadius: BorderRadius.circular(12.0),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      title,
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                        fontSize: MediaQuery.of(context).size.width * 0.04,
-                        color: Colors
-                            .black, // Text color to contrast with the gradient
-                      ),
-                      overflow: TextOverflow.ellipsis, // Handle long text
-                      maxLines: 1,
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      description,
-                      style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400,
-                          fontSize: MediaQuery.of(context).size.width * 0.03,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        title,
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w500,
+                          fontSize: MediaQuery.of(context).size.width * 0.04,
                           color: Colors
-                              .black45 // Semi-transparent white for better readability
+                              .black, // Text color to contrast with the gradient
+                        ),
+                        overflow: TextOverflow.ellipsis, // Handle long text
+                        maxLines: 1,
                       ),
-                      overflow: TextOverflow.ellipsis, // Handle long text
-                      maxLines: 3,
-                    ),
-                  ],
+                      const SizedBox(height: 5),
+                      Text(
+                        description,
+                        style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w400,
+                            fontSize: MediaQuery.of(context).size.width * 0.03,
+                            color: Colors
+                                .black45 // Semi-transparent white for better readability
+                        ),
+                        overflow: TextOverflow.ellipsis, // Handle long text
+                        maxLines: 3,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-               SizedBox(width: MediaQuery.of(context).size.width * 0.01,), // Add spacing between text and image
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
-                // Optional: Add rounded corners to the image
-                child: Image.asset(
-                  imagePath,
-                  height: 50,
-                  width: 50,
-                  fit: BoxFit.cover,
+                 SizedBox(width: MediaQuery.of(context).size.width * 0.01,), // Add spacing between text and image
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  // Optional: Add rounded corners to the image
+                  child: Image.asset(
+                    imagePath,
+                    height: 50,
+                    width: 50,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },

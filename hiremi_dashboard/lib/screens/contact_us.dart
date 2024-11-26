@@ -6,13 +6,13 @@ import '../widgets/app_bar.dart';
  import '../widgets/bottom_navbar.dart';
 
 class ContactUs extends StatelessWidget {
-  const ContactUs({Key? key}) : super(key: key);
+  const ContactUs({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(context, 'Help & Support'),
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -76,7 +76,7 @@ class ContactUs extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBarWidget(),
+      bottomNavigationBar: const BottomNavBarWidget(),
     );
   }
 
@@ -125,7 +125,7 @@ class ContactUs extends StatelessWidget {
                         style: GoogleFonts.poppins(
                           fontSize: MediaQuery.of(context).size.width * 0.03,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xFF0F3CC9),
+                          color: const Color(0xFF0F3CC9),
                         ),
                       ),
                     ],
