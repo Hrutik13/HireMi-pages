@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../widgets/app_bar.dart';
  import '../widgets/app_drawer.dart';
  import 'package:hiremi_dashboard/colors.dart';
- import '../widgets/bottom_navbar.dart';
+import '../widgets/custome_BottomBar.dart';
 
 class ContactUs extends StatelessWidget {
   const ContactUs({super.key});
@@ -76,7 +76,7 @@ class ContactUs extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const BottomNavBarWidget(),
+      bottomNavigationBar: const CustomBottomBar(),
     );
   }
 

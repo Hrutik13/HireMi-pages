@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../widgets/bottom_navbar.dart';
+
 import '../widgets/app_drawer.dart';
 import '../widgets/app_bar.dart';
+import '../widgets/custome_BottomBar.dart';
 
 class HelpAndSupport extends StatelessWidget {
   const HelpAndSupport({super.key});
@@ -43,7 +44,7 @@ class HelpAndSupport extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavBarWidget(),
+      bottomNavigationBar: const CustomBottomBar(),
     );
   }
 }
