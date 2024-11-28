@@ -22,7 +22,7 @@ class ContactUs extends StatelessWidget {
               // Top Image Section
               Center(
                 child: Image.asset(
-                  'assets/images/Contact us.png', // Replace with your asset or network image
+                  'assets/images/Contact us.png',
                   height: 250,
                 ),
               ),

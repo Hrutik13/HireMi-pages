@@ -19,9 +19,9 @@ class SliderWidget extends StatelessWidget {
             indicatorRadius: 4,
             itemSpacing: 10,
           )
-        ), // Style of the indicator
+        ),
         autoPlay: true, // Enable auto play
-        enlargeCenterPage: true, // Enlarge the center page
+        enlargeCenterPage: true,
         floatingIndicator: false,
         viewportFraction: 1,
 
@@ -36,7 +36,7 @@ class SliderWidget extends StatelessWidget {
                 margin:  EdgeInsets.symmetric( horizontal: MediaQuery.of(context).size.width * 0.01, ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.white, // You can change the background color
+                  color: Colors.white,
                 ),
                 child: Center(
                   child: Row(

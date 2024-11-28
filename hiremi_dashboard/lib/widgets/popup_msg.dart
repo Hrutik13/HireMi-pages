@@ -43,7 +43,7 @@ void showCustomPopup(BuildContext context) {
                 SizedBox(height:  MediaQuery.of(context).size.width * 0.02),
                 // Image/Illustration
                 Image.asset(
-                  'assets/images/pana.png', // Replace with your asset
+                  'assets/images/pana.png',
                   height: MediaQuery.of(context).size.height * 0.1,
                 ),
                 SizedBox(height:  MediaQuery.of(context).size.width * 0.03),
@@ -140,7 +140,7 @@ void showCustomPopup(BuildContext context) {
                 // "Verify & Unlock Now" Button
                 ElevatedButton(
                   onPressed: () {
-                    // Add your verification logic here
+
                     Navigator.of(context).pop(); // Close the popup
                   },
                   style: ElevatedButton.styleFrom(

@@ -14,7 +14,7 @@ class AppDrawer extends StatefulWidget {
 }
 
 class _AppDrawerState extends State<AppDrawer> {
-  final ValueNotifier<double> _valueNotifier = ValueNotifier<double>(71.34); // Example progress value
+  final ValueNotifier<double> _valueNotifier = ValueNotifier<double>(71.34);
   int _selectedIndex = -1; // To track the selected tile index
 
   @override
@@ -167,7 +167,7 @@ class _AppDrawerState extends State<AppDrawer> {
                             ],
                           ),
                           SizedBox(height:MediaQuery.of(context).size.height * 0.015),
-                          // Description text
+
                           Text(
                             'Verify your profile to unlock premium features and lifetime benefits.',
                             style: GoogleFonts.poppins(

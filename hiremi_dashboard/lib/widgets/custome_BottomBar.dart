@@ -70,8 +70,8 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
             ),
             _buildBottomBarItem(
               context: context,
-              svgAsset: "assets/icons/ask_expert.svg", // Add the SVG asset path here
-              title: "Alerts",
+              svgAsset: "assets/icons/ask_expert.svg",
+              title: "Ask Expert",
               index: 2,
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const AskExpertPage(),));
@@ -94,7 +94,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  // Optionally, you can handle a specific action for this item
+
                 });
               },
               child: Image.asset(
@@ -109,7 +109,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
     );
   }
 
-  // Updated _buildBottomBarItem to handle icon, SVG (with color), and image
+
   Widget _buildBottomBarItem({
     required BuildContext context,
     IconData? icon,
@@ -130,7 +130,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
             SvgPicture.asset(
               svgAsset,
               height: MediaQuery.of(context).size.height * 0.03,
-              color: isSelected ? const Color(0xFF0F3CC9) : Colors.black54, // Use blue for selected, grey for unselected
+              color: isSelected ? const Color(0xFF0F3CC9) : Colors.black54,
             )
           else if (icon != null) // Fallback to Icon if no SVG or Image
             Icon(

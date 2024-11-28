@@ -33,9 +33,9 @@ class CustomCard extends StatelessWidget {
               Container(
                 width: screenWidth * 0.06, // Dynamic width for the outer circle
                 height: screenWidth * 0.06, // Dynamic height for the outer circle
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: const Color(0xFF0F3CC9),
+                  color: Color(0xFF0F3CC9),
                 ),
                 child: Center(
                   child: Container(
@@ -48,15 +48,15 @@ class CustomCard extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: screenWidth * 0.025), // Dynamic spacing between the circle and text container
+              SizedBox(width: screenWidth * 0.025),
             ],
             // Text container with dynamic width
             Container(
-              width: screenWidth * 0.65, // Dynamic width for the text container
+              width: screenWidth * 0.65,
               padding: EdgeInsets.symmetric(
                 horizontal: screenWidth * 0.03,
                 vertical: screenHeight * 0.015,
-              ), // Dynamic padding
+              ),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -64,7 +64,7 @@ class CustomCard extends StatelessWidget {
               child: Text(
                 title,
                 style: GoogleFonts.poppins(
-                  fontSize: screenWidth * 0.035, // Dynamic font size
+                  fontSize: screenWidth * 0.035,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -73,16 +73,16 @@ class CustomCard extends StatelessWidget {
               SizedBox(width: screenWidth * 0.025), // Dynamic spacing between the text container and circle
               // Add radio button-like design for the sender
               Container(
-                width: screenWidth * 0.06, // Dynamic width for the outer circle
-                height: screenWidth * 0.06, // Dynamic height for the outer circle
-                decoration: BoxDecoration(
+                width: screenWidth * 0.06,
+                height: screenWidth * 0.06,
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: const Color(0xFF0F3CC9),
+                  color: Color(0xFF0F3CC9),
                 ),
                 child: Center(
                   child: Container(
-                    width: screenWidth * 0.03, // Dynamic width for the inner circle
-                    height: screenWidth * 0.03, // Dynamic height for the inner circle
+                    width: screenWidth * 0.03,
+                    height: screenWidth * 0.03,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white,

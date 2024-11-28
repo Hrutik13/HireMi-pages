@@ -20,7 +20,7 @@ class AskExpertPage extends StatelessWidget {
       Container(
         child: Column(
           children: [
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             FlutterCarousel(
               options: FlutterCarouselOptions(
                  height: MediaQuery.of(context).size.height * 0.15,
@@ -28,7 +28,7 @@ class AskExpertPage extends StatelessWidget {
                 enableInfiniteScroll: true,
                 enlargeCenterPage: true,
                 autoPlay: true,
-                autoPlayInterval: Duration(seconds: 3),
+                autoPlayInterval: const Duration(seconds: 3),
                 // scrollPhysics: BouncingScrollPhysics(),
               ),
               items: [
@@ -62,7 +62,7 @@ class AskExpertPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -102,16 +102,16 @@ class AskExpertPage extends StatelessWidget {
                           ),
                         )
                       ),
-                    SizedBox(height: 20,),
-                    CustomCard(
+                    const SizedBox(height: 20,),
+                    const CustomCard(
                       title: "Submit Your Query -\nAsk anything",
                       isSender: false,
                     ),
-                    CustomCard(
+                    const CustomCard(
                       title: "Receive One-on-One Expert \nGuidance in Your Language",
                       isSender: true,
                     ),
-                    CustomCard(
+                    const CustomCard(
                       title: "Stay Connected –\nGet Expert Guidance \nEvery 2 Weeks",
                       isSender: false,
                     ),
@@ -134,10 +134,7 @@ class AskExpertPage extends StatelessWidget {
                     ),
                 
                     ElevatedButton(
-                      onPressed: () {
-                        // Add your verification logic here
-                        Navigator.of(context).pop(); // Close the popup
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         minimumSize:  Size(
                             MediaQuery.of(context).size.width * 0.9,
