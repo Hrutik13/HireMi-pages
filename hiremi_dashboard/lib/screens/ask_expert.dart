@@ -20,7 +20,7 @@ class AskExpertPage extends StatelessWidget {
       Container(
         child: Column(
           children: [
-            const SizedBox(height: 15,),
+             SizedBox(height: MediaQuery.of(context).size.height * 0.02,),
             FlutterCarousel(
               options: FlutterCarouselOptions(
                  height: MediaQuery.of(context).size.height * 0.15,
@@ -28,8 +28,12 @@ class AskExpertPage extends StatelessWidget {
                 enableInfiniteScroll: true,
                 enlargeCenterPage: true,
                 autoPlay: true,
+
                 autoPlayInterval: const Duration(seconds: 3),
-                // scrollPhysics: BouncingScrollPhysics(),
+                autoPlayCurve: Curves.easeIn,
+
+                autoPlayAnimationDuration: Duration(microseconds: 01),
+                physics: CarouselScrollPhysics()
               ),
               items: [
                 // First Slide
@@ -88,7 +92,7 @@ class AskExpertPage extends StatelessWidget {
                                     color: const Color(0xFF0F3CC9),
                                   )
                                 ),
-                
+
                                 TextSpan(
                                   text: "\nTo address all your career-related queries and offer the best possible guidance, customized to fit your needs.",
                                     style: GoogleFonts.poppins(
@@ -115,7 +119,7 @@ class AskExpertPage extends StatelessWidget {
                       title: "Stay Connected –\nGet Expert Guidance \nEvery 2 Weeks",
                       isSender: false,
                     ),
-                
+
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
@@ -132,7 +136,7 @@ class AskExpertPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                
+
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
